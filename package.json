@@ -26,7 +26,8 @@
   },
   "scripts": {
     "debug": "node debug app.js",
-    "start": "node app.js"
+    "start": "node app.js",
+    "dev": "nodemon app.js"
   },
   "main": "app.js",
   "repository": {
@@ -34,5 +35,8 @@
     "url": "git://github.com/rizasaputra/bandungjs.git"
   },
   "author": "rizasaputra",
-  "license": ""
+  "license": "",
+  "devDependencies": {
+    "nodemon": "^1.12.5"
+  }
 }
