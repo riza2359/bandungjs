@@ -28,7 +28,8 @@
   "scripts": {
     "debug": "node debug app.js",
     "start": "node app.js",
-    "dev": "nodemon app.js"
+    "dev": "nodemon app.js",
+    "test": "mocha test/bootstrap.test.js test/integration/**/*.test.js"
   },
   "main": "app.js",
   "repository": {
@@ -38,6 +39,9 @@
   "author": "rizasaputra",
   "license": "",
   "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-http": "^3.0.0",
+    "mocha": "^4.0.1",
     "nodemon": "^1.12.5"
   }
 }
