@@ -48,4 +48,14 @@ module.exports.policies = {
 		// before letting any users feed our rabbits
 		// feed : ['isNiceToAnimals', 'hasRabbitFood']
 	// }
+  
+  PersonController: {
+    '*': ['tokenAuth'],
+    index: true,
+    show: true
+  },
+
+  PetController: {
+    '*': ['tokenAuth']
+  }
 };
