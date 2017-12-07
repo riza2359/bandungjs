@@ -5,7 +5,22 @@
  * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
  */
 
-module.exports = {	
+module.exports = {
+    /**
+     * @api {post} /pet Create pet
+    * @apiName CreatePet
+    * @apiGroup Pet
+    * @apiPermission  authenticated user
+    * @apiDescription API to create a new pet.
+    *
+    * @apiParam {String} name Pet name.
+    * @apiParam {Number} owner Pet owner ID.
+    *
+    * @apiSuccess {Object} pet Pet.
+    * @apiSuccess {String} pet.name Person name.
+    * @apiSuccess {Object} pet.owner Pet owner.
+    * @apiSuccess {String} pet.owner.name Pet owner name.
+    */	
 	create: async function (req, res) {
         const params = req.params.all();
         let pet;
