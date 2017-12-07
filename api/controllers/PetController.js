@@ -15,7 +15,7 @@ module.exports = {
             person = await Person.findOne(params.owner);
 
             if (!person) {
-                return res.json(400, { error: 'Invalid owner' });
+                return res.apiError(400, { error: 'Invalid owner' });
             }
 
             pet = await Pet.create({ 
@@ -25,10 +25,10 @@ module.exports = {
 
             pet = await Pet.findOne(pet.id).populate('owner');
         } catch(error) {
-            return res.json(500, { error });
+            return res.apiError(500, { error });
         }
 
-        return res.json({ pet })
+        return res.apiSuccess({ pet })
     }
 };
 

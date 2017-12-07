@@ -14,8 +14,8 @@ module.exports = {
         const name = req.param('name');
 
         Person.create({ name })
-            .then(person => res.json({ person }))
-            .catch(error => res.json(500, { error }))
+            .then(person => res.apiSuccess({ person }))
+            .catch(error => res.apiError(500, { error }))
     },
 
     createWithPets(req, res) {
@@ -23,8 +23,8 @@ module.exports = {
 
         PersonService.validateCreateWithPets(params)
             .then(() => PersonService.createWithPets(params))
-            .then(person => res.json({ person }))
-            .catch(error => res.json(500, { error }))
+            .then(person => res.apiSuccess({ person }))
+            .catch(error => res.apiError(500, { error }))
     },
 
     index(req, res) {
@@ -33,15 +33,15 @@ module.exports = {
             // .where()
             // .sort()
             // .limit()
-            .then(persons => res.json({ persons }))
-            .catch(error => res.json(500, { error }))
+            .then(persons => res.apiSuccess({ persons }))
+            .catch(error => res.apiError(500, { error }))
     },
 
     show(req, res) {
         Person.findOne(req.param('id'))
             .populate('pets')
-            .then(person => res.json({ person }))
-            .catch(error => res.json(500, { error }))
+            .then(person => res.apiSuccess({ person }))
+            .catch(error => res.apiError(500, { error }))
     }
 };
 

@@ -50,12 +50,12 @@ module.exports.policies = {
 	// }
   
   PersonController: {
-    '*': ['tokenAuth'],
-    index: true,
-    show: true
+    '*': ['requestLog', 'tokenAuth'],
+    index: 'requestLog',
+    show: 'requestLog'
   },
 
   PetController: {
-    '*': ['tokenAuth']
+    '*': ['requestLog', 'tokenAuth']
   }
 };

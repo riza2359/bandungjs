@@ -5,5 +5,5 @@ module.exports = (req, res, next) => {
         return next();
     }
 
-    return res.json(401, { error: 'Invalid token' });
+    return res.apiError(401, { error: 'Invalid token' });
 }
