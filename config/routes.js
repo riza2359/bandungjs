@@ -34,7 +34,7 @@ module.exports.routes = {
 
   '/': {
     view: 'homepage'
-  }
+  },
 
   /***************************************************************************
   *                                                                          *
@@ -46,4 +46,9 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
+  'get /person': 'PersonController.index',
+  'get /person/:id': 'PersonController.show',
+  'post /person': 'PersonController.create',
+  'post /person/withPets': 'PersonController.createWithPets',
+  'post /pet': 'PetController.create',
 };
